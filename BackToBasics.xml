@@ -1,0 +1,459 @@
+﻿<skin name="Back to Basics" version="8" width="1920" height="1080" nbdecks="2" comment="VirtualDJ 8 - Back to Basics" author="Ian Dunkerley - aka Dunks1980" preview="Screenshot.jpg">
+	<copyright>
+		(c)2021 - Dunks1980
+	</copyright>
+	<group name="class_defines">
+		<font name="Arial" />
+		<tooltip size="14" color="#000000" back="#fbf9e0" shortcut="#58595b" />
+		<define color="deckcolor" value="#1e7bff" deck="left" />
+		<define color="btn" value="#1e7bff" deck="left" />
+		<define color="deckcolor" value="#ff3841" deck="right" />
+		<define color="btn" value="#ff3841" deck="right" />
+	</group>
+	<group name="grabzone">
+		<grabzone>
+			<pos x="0" y="0" />
+			<size width="1920" height="40" />
+		</grabzone>
+	</group>
+	<group name="topbar">
+		<slider action="deck 1 pitch" orientation="vertical" direction="down" dblclick="deck 1 pitch 100%" rightclick="temporary">
+			<size width="20" height="97" />
+			<pos x="153" y="48" />
+			<fader>
+				<size width="20" height="22" />
+				<pos x="153" y="1085" />
+			</fader>
+			<reset value="50" />
+		</slider>
+		<logo>
+			<pos x="960-100-78" y="7" />
+			<size width="65" height="18" />
+		</logo>
+		<menu tooltip="SKIN LAYOUT\nSelect the layout adapted to your mixing style">
+			<pos x="960-100-78" y="7" />
+			<size width="65" height="18" />
+			<separator text="Direction" localize="true" />
+			<item text="Vertical" localize="true" action="set '$direction' 0" check="var_equal '$direction' 0" />
+			<item text="Horizontal (side by side)" localize="true" action="set '$direction' 1" check="var_equal '$direction' 1" />
+      <item text="Horizontal (stacked)" localize="true" action="set '$direction' 2" check="var_equal '$direction' 2" />
+			<separator text="Display" localize="true" />
+			<item text="Colors" localize="true" action="setting skinWaveformType 1" check="setting skinWaveformType 1" visibility="setting_ismodified skinWaveformType" />
+			<item text="Shapes" localize="true" action="setting skinWaveformType 2" check="setting skinWaveformType 2" visibility="setting_ismodified skinWaveformType" />
+			<separator text="Colors" localize="true" visibility="setting_ismodified skinWaveformType && setting skinWaveformType 1" />
+			<item text="Monochrome" localize="true" action="setting 'coloredWaveforms' 'monochrome'" check="setting 'coloredWaveforms' 'monochrome'" visibility="setting_ismodified skinWaveformType && setting skinWaveformType 1" />
+			<item text="Per Deck" localize="true" action="setting 'coloredWaveforms' 'per-deck'" check="setting 'coloredWaveforms' 'per-deck'" visibility="setting_ismodified skinWaveformType && setting skinWaveformType 1" />
+			<item text="Neutral" localize="true" action="setting 'coloredWaveforms' 'neutral'" check="setting 'coloredWaveforms' 'neutral'" visibility="setting_ismodified skinWaveformType && setting skinWaveformType 1" />
+			<item text="Show Gridlines" localize="true" action="setting 'showGridlines'" check="setting 'showGridlines'" />
+		</menu>
+		<textzone name="vdjclock">
+			<pos x="960-100-15" y="0" />
+			<size width="100" height="29" />
+			<text1 fontsize="20" color="#aaaaaa" align="right" weight="bold" action="get_clock 24" />
+			<text2 fontsize="20" color="#aaaaaa" align="right" weight="bold" action="get_clock 12" />
+			<text3 fontsize="20" color="#aaaaaa" align="right" weight="bold" format="%counter" />
+		</textzone>
+		<group name="applicationbuttons">
+			<button os="pc" action="settings">
+				<pos x="1740" y="0" />
+				<size width="45" height="29" />
+				<up x="1740" y="0" />
+				<over x="1740" y="1080" />
+				<down x="1740" y="1080" />
+				<selected x="1740" y="1080" />
+			</button>
+			<button os="pc" action="minimize">
+				<pos x="1785" y="0" />
+				<size width="45" height="29" />
+				<over x="1785" y="1080" />
+			</button>
+			<button os="pc" action="maximize" rightclick="maximize off">
+				<pos x="1830" y="0" />
+				<size width="45" height="29" />
+				<up x="1830" y="0" />
+				<over x="1830" y="1080" />
+			</button>
+			<button os="pc" action="close">
+				<pos x="1875" y="0" />
+				<size width="45" height="29" />
+				<up x="1875" y="0" />
+				<over x="1875" y="1080" />
+				<down x="1875" y="1080" />
+				<selected x="1875" y="1080" />
+			</button>
+			<button os="mac" action="settings">
+				<pos x="1740" y="0" />
+				<size width="45" height="29" />
+				<up x="1740" y="0" />
+				<over x="1740" y="1080" />
+				<down x="1740" y="1080" />
+				<selected x="1740" y="1080" />
+			</button>
+			<button os="mac" action="minimize">
+				<pos x="1785" y="0" />
+				<size width="45" height="29" />
+				<over x="1785" y="1080" />
+			</button>
+			<button os="mac" action="maximize" rightclick="maximize off">
+				<pos x="1830" y="0" />
+				<size width="45" height="29" />
+				<up x="1830" y="0" />
+				<over x="1830" y="1080" />
+			</button>
+			<button os="mac" action="close">
+				<pos x="1875" y="0" />
+				<size width="45" height="29" />
+				<up x="1875" y="0" />
+				<over x="1875" y="1080" />
+				<down x="1875" y="1080" />
+				<selected x="1875" y="1080" />
+			</button>
+		</group>
+	</group>
+	<dropzone deck="left">
+		<pos x="0" y="0" />
+		<size width="960" height="140" />
+	</dropzone>
+	<dropzone deck="right">
+		<pos x="960" y="0" />
+		<size width="960" height="140" />
+	</dropzone>
+	<!-- layout lines -->
+	<!-- center line -->
+	<square color="#7e7e7e" visibility="100%">
+		<pos x="960" y="0" />
+		<size width="1" height="139" />
+	</square>
+	<!-- line under header -->
+	<square color="#7e7e7e" visibility="100%">
+		<pos x="0" y="29" />
+		<size width="1920" height="1" />
+	</square>
+	<!-- line under songpos -->
+	<square color="#7e7e7e" visibility="100%">
+		<pos x="0" y="90" />
+		<size width="1920" height="1" />
+	</square>
+	<!-- line under transport -->
+	<square color="#7e7e7e" visibility="100%">
+		<pos x="0" y="139" />
+		<size width="1920" height="1" />
+	</square>
+	<!-- line on the right -->
+	<!--
+	<square color="#7e7e7e" visibility="100%">
+	<pos x="1920-60" y="30"/>
+	<size width="1" height="110"/>
+	</square>
+	-->
+	<!-- track info left -->
+	<textzone deck="left">
+		<pos x="15" y="0" />
+		<size width="580" height="29" />
+		<text fontsize="20" color="deckcolor" weight="bold" format="%title  •  %author" align="left" scroll="yes" click="scroll" />
+	</textzone>
+	<textzone deck="left">
+		<pos x="565" y="0" />
+		<size width="200" height="29" />
+		<text fontsize="20" color="deckcolor" weight="bold" format="%time  •  %bpm bpm" align="right" scroll="yes" click="scroll" />
+	</textzone>
+	<!-- track info right -->
+	<textzone deck="right">
+		<pos x="975" y="0" />
+		<size width="580" height="29" />
+		<text fontsize="20" color="deckcolor" weight="bold" format="%title  •  %author" align="left" scroll="yes" click="scroll" />
+	</textzone>
+	<textzone deck="right">
+		<pos x="1525" y="0" />
+		<size width="200" height="29" />
+		<text fontsize="20" color="deckcolor" weight="bold" format="%time  •  %bpm bpm" align="right" scroll="yes" click="scroll" />
+	</textzone>
+	<!-- song positions -->
+	<songpos deck="left" colorPlayed="deckcolor" colorBass="#00567a" colorMed="#00a5e4" colorHigh="#7fc8e9">
+		<size height="60" width="930" />
+		<pos x="15" y="30" />
+		<cues>
+			<size width="20" height="60" />
+			<clipmask x="1920-20" y="1080-60" />
+		</cues>
+	</songpos>
+	<songpos deck="right" colorPlayed="deckcolor" colorBass="#00567a" colorMed="#00a5e4" colorHigh="#7fc8e9">
+		<size height="60" width="930" />
+		<pos x="975" y="30" />
+		<cues>
+			<size width="20" height="60" />
+			<clipmask x="1920-20" y="1080-60" />
+		</cues>
+	</songpos>
+	<!-- action buttons left -->
+	<!-- background -->
+	<square color="#393939" visibility="100%">
+		<pos x="0" y="91" />
+		<size width="928-170" height="48" />
+	</square>
+	<!-- background line -->
+	<square color="#7e7e7e" visibility="100%">
+		<pos x="758" y="91" />
+		<size width="1" height="48" />
+	</square>
+	<define class="btn_main" placeholders="width,height,text,sysicon">
+		<size width="[WIDTH]" height="[HEIGHT]" />
+		<off radius="0" border_size="1" border="#2b2b2b" color="#393939" />
+		<over radius="0" border_size="1" border="#2b2b2b" color="#585858" />
+		<down radius="0" border_size="1" border="#2b2b2b" color="#2d2d2d" />
+		<selected radius="0" border_size="1" border="btn" color="#2d2d2d" />
+		<text size="16" weight="bold" color="#c0c0c0" align="center" text="[TEXT]" />
+		<icon sysicon="[SYSICON]" coloroff="#c0c0c0" colorover="#c0c0c0" width="30" height="30" />
+	</define>
+	<button deck="left" class="btn_main" x="15" y="100" width="60" height="30" action="play_button" sysicon="play_button" />
+	<button deck="left" class="btn_main" x="85" y="100" width="60" height="30" action="cue_button" text="cue" />
+	<button deck="left" class="btn_main" x="285" y="100" width="60" height="30" action="loop" text="loop" />
+	<button deck="left" action="loop_select" rightclick="loop_options">
+		<pos x="355" y="100" />
+		<size width="40" height="30" />
+		<off radius="0" border_size="1" border="#2b2b2b" color="#202020" />
+		<over radius="0" border_size="1" border="#2b2b2b" color="#585858" />
+		<down radius="0" border_size="1" border="#2b2b2b" color="#2d2d2d" />
+		<selected radius="0" border_size="1" border="btn" color="#2d2d2d" />
+		<text size="16" color="#c0c0c0" align="center" weight="bold" format="%loop" />
+	</button>
+	<button deck="left" class="btn_main" x="460" y="100" width="60" height="30" action="clone_from_deck" text="clone" />
+	<button deck="left" class="btn_main" x="615" y="100" width="60" height="30" action="sync" text="sync" />
+	<button deck="left" class="btn_main" x="685" y="100" width="60" height="30" action="pitch_reset" dblclick="pitch 100%" text="reset" />
+	<!-- pitch -->
+	<textzone deck="left">
+		<pos x="760" y="100" />
+		<size width="90" height="28" />
+		<text fontsize="30" color="deckcolor" weight="bold" format="%Ppitch" align="center" />
+	</textzone>
+	<!-- BPM -->
+	<textzone action="edit_bpm" deck="left" tooltip="">
+		<pos x="860" y="100" />
+		<size width="90" height="28" />
+		<text fontsize="30" color="deckcolor" weight="bold" align="center" format="%Pbpmex" />
+	</textzone>
+	<!-- action buttons right -->
+	<!-- background -->
+	<square color="#393939" visibility="100%">
+		<pos x="961" y="91" />
+		<size width="928-170" height="48" />
+	</square>
+	<!-- background line -->
+	<square color="#7e7e7e" visibility="100%">
+		<pos x="728+990" y="91" />
+		<size width="1" height="48" />
+	</square>
+	<button deck="right" class="btn_main" x="15+960" y="100" width="60" height="30" action="play_button" sysicon="play_button" />
+	<button deck="right" class="btn_main" x="85+960" y="100" width="60" height="30" action="cue_button" text="cue" />
+	<button deck="right" class="btn_main" x="285+960" y="100" width="60" height="30" action="loop" text="loop" />
+	<button deck="right" action="loop_select" rightclick="loop_options">
+		<pos x="355+960" y="100" />
+		<size width="40" height="30" />
+		<off radius="0" border_size="1" border="#2b2b2b" color="#202020" />
+		<over radius="0" border_size="1" border="#2b2b2b" color="#585858" />
+		<down radius="0" border_size="1" border="#2b2b2b" color="#2d2d2d" />
+		<selected radius="0" border_size="1" border="btn" color="#2d2d2d" />
+		<text size="16" color="#c0c0c0" align="center" weight="bold" format="%loop" />
+	</button>
+	<button deck="right" class="btn_main" x="460+960" y="100" width="60" height="30" action="clone_from_deck" text="clone" />
+	<button deck="right" class="btn_main" x="615+960" y="100" width="60" height="30" action="sync" text="sync" />
+	<button deck="right" class="btn_main" x="685+960" y="100" width="60" height="30" action="pitch_reset" dblclick="pitch 100%" text="reset" />
+	<!-- pitch -->
+	<textzone deck="right">
+		<pos x="760+960" y="100" />
+		<size width="90" height="28" />
+		<text fontsize="30" color="deckcolor" weight="bold" format="%Ppitch" align="center" />
+	</textzone>
+	<!-- BPM -->
+	<textzone action="edit_bpm" deck="right" tooltip="">
+		<pos x="860+960" y="100" />
+		<size width="90" height="28" />
+		<text fontsize="30" color="deckcolor" weight="bold" align="center" format="%Pbpmex" />
+	</textzone>
+	<!-- vertical waves and browser -->
+	<!-- hide cuepoint -->
+	<square color="#202020" visibility="100%">
+		<pos x="1920-20" y="1080-60" />
+		<size width="20" height="60" />
+	</square>
+	<!-- vertical waveforms -->
+	<split name="waveforms" type="horizontal" position="0.1" attachX="both" attachY="both" resizeX="no" visibility="var_equal '$direction' 0">
+		<separator close="left" closed="no" />
+		<pos x="0" y="0+140" width="1920" height="1080-140" />
+		<left resizeX="no">
+			<size width="800" height="988" />
+
+
+
+
+
+			<scratchwave deck="left" orientation="vertical" visibility="1">
+				<pos x="1" y="0" width="399" height="988" />
+			  <grid pos="0" mirrored="true" background="no" backgroundshaded="no" height="8" size="5" mainsize="10" maincolor="deckcolor" color="#dddddd" />
+				<gridlines width="2" color="#dddddd" transparency="0.3" />
+				<cue y="0" height="60">
+					<mask x="307" y="5" width="60" height="60" />
+				</cue>
+				<overlay>
+					<pos x="0" y="492" />
+					<size width="399" height="4" />
+					<background color="white" shape="square" />
+				</overlay>
+			</scratchwave>
+      <!-- spinner -->
+      <slider deck="left" orientation="round" action="get_rotation" x="100" y="394" visibility="1">
+        <size width="200" height="200"/>
+        <fader color="deckcolor" width="15" height="200" radius="0"/>
+        <mousecircle x="-10" y="-10" r="10"/>
+      </slider>
+
+			<scratchwave deck="right" orientation="vertical" visibility="1">
+				<pos x="401" y="0" width="399" height="988" />
+				<grid pos="0" mirrored="true" background="no" backgroundshaded="no" height="8" size="5" mainsize="10" maincolor="deckcolor" color="#dddddd" />
+				<gridlines width="2" color="#dddddd" transparency="0.3" />
+				<cue y="0" height="60">
+					<mask x="307" y="5" width="60" height="60" />
+				</cue>
+				<overlay>
+					<pos x="400" y="492" />
+					<size width="399" height="4" />
+					<background color="white" shape="square" />
+				</overlay>
+			</scratchwave>
+      <!-- spinner -->
+      <slider deck="right" orientation="round" action="get_rotation" x="500" y="394" visibility="1">
+        <size width="200" height="200"/>
+        <fader color="deckcolor" width="15" height="200" radius="0"/>
+        <mousecircle x="-10" y="-10" r="10"/>
+      </slider>
+
+   
+
+
+
+
+			<square color="#7e7e7e" visibility="1">
+				<pos x="399" y="0" />
+				<size width="2" height="988" />
+			</square>
+			<dropzone deck="left">
+				<pos x="1" y="0" />
+				<size width="398" height="988" />
+			</dropzone>
+			<dropzone deck="right">
+				<pos x="401" y="0" />
+				<size width="398" height="988" />
+			</dropzone>
+		</left>
+		<right>
+			<browser>
+				<pos x="0" y="0" />
+				<size width="1920" height="1080-140" />
+			</browser>
+		</right>
+	</split>
+	<!-- horizontal waveforms side by side -->
+	<split name="waveforms" type="vertical" position="0.1" attachX="both" attachY="both" resizeX="no" resizeY="yes" visibility="var_equal '$direction' 1">
+		<separator close="up" closed="no" />
+		<pos x="0" y="0+140" width="1920" height="1080-140" />
+		<up resizeY="yes">
+			<size width="1920" height="988" />
+			<scratchwave deck="left" orientation="horizontal" visibility="1">
+				<pos x="0" y="1" width="958 - 10" height="987" />
+				<grid pos="0" mirrored="true" background="no" backgroundshaded="no" height="100" size="5" mainsize="10" maincolor="deckcolor" color="#dddddd" />
+				<gridlines width="6" height="6" color="#dddddd" transparency="0.3" />
+				<cue y="928" height="60" width="60">
+					<mask x="307" y="5" width="60" height="60" />
+				</cue>
+				<overlay>
+					<pos x="474" y="0" />
+					<size width="4" height="988" />
+					<background color="white" shape="square" />
+				</overlay>
+			</scratchwave>
+			<scratchwave deck="right" orientation="horizontal" visibility="1">
+				<pos x="962 + 10" y="1" width="958 - 10" height="987" />
+				<grid pos="0" mirrored="true" background="no" backgroundshaded="no" height="100" size="5" mainsize="10" maincolor="deckcolor" color="#dddddd" />
+				<gridlines width="6" height="6" color="#dddddd" transparency="0.3" />
+				<cue y="928" height="60" width="60">
+					<mask x="307" y="5" width="60" height="60" />
+				</cue>
+				<overlay>
+					<pos x="1446" y="0" />
+					<size width="4" height="988" />
+					<background color="white" shape="square" />
+				</overlay>
+			</scratchwave>
+			<square color="#7e7e7e" visibility="100%">
+				<pos x="960" y="0" />
+				<size width="1" height="988" />
+			</square>
+			<dropzone deck="left">
+				<pos x="1" y="0" />
+				<size width="960" height="988" />
+			</dropzone>
+			<dropzone deck="right">
+				<pos x="960" y="0" />
+				<size width="960" height="988" />
+			</dropzone>
+		</up>
+		<down>
+			<browser>
+				<pos x="0" y="0" />
+				<size width="1920" height="1080-140" />
+			</browser>
+		</down>
+	</split>
+  	<!-- horizontal waveforms stacked -->
+	<split name="waveforms" type="vertical" position="0.1" attachX="both" attachY="both" resizeX="no" resizeY="yes" visibility="var_equal '$direction' 2">
+		<separator close="up" closed="no" />
+		<pos x="0" y="0+140" width="1920" height="1080-140" />
+		<up resizeY="yes">
+			<size width="1920" height="988" />
+			<scratchwave deck="left" orientation="horizontal" visibility="1">
+				<pos x="0" y="1" width="1920" height="492" />
+				<grid pos="0" mirrored="true" background="no" backgroundshaded="no" height="100" size="5" mainsize="10" maincolor="deckcolor" color="#dddddd" />
+				<gridlines width="6" height="6" color="#dddddd" transparency="0.3" />
+				<cue y="1 + 492 - 60" height="60" width="60">
+					<mask x="307" y="5" width="60" height="60" />
+				</cue>
+				<overlay>
+					<pos x="957" y="0" />
+					<size width="6" height="492" />
+					<background color="deckcolor" shape="square" />
+				</overlay>
+			</scratchwave>
+			<scratchwave deck="right" orientation="horizontal" visibility="1">
+				<pos x="0" y="496" width="1920" height="492" />
+				<grid pos="0" mirrored="true" background="no" backgroundshaded="no" height="100" size="5" mainsize="10" maincolor="deckcolor" color="#dddddd" />
+				<gridlines width="6" height="6" color="#dddddd" transparency="0.3" />
+				<cue y="496 + 492 - 60" height="60" width="60">
+					<mask x="307" y="5" width="60" height="60" />
+				</cue>
+				<overlay>
+					<pos x="957" y="495" />
+					<size width="6" height="492" />
+					<background color="deckcolor" shape="square" />
+				</overlay>
+			</scratchwave>
+			<square color="#7e7e7e" visibility="100%">
+				<pos x="0" y="492" />
+				<size width="1920" height="4" />
+			</square>
+			<dropzone deck="left">
+				<pos x="0" y="0" />
+					<size width="1920" height="492" />
+			</dropzone>
+			<dropzone deck="right">
+				<pos x="0" y="495" />
+					<size width="1920" height="492" />
+			</dropzone>
+		</up>
+		<down>
+			<browser>
+				<pos x="0" y="0" />
+				<size width="1920" height="1080-140" />
+			</browser>
+		</down>
+	</split>
+</skin>
